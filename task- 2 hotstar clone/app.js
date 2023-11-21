@@ -8,14 +8,14 @@ const createSlide = () => {
         slideIndex = 0;
     }
 
-    //dom elements
+    
     let slide = document.createElement('div');
     let imgElement = document.createElement('img');
     let content = document.createElement('div');
     let h1 = document.createElement('h1');
     let p = document.createElement('p');
 
-    //attaching elements
+    
     imgElement.appendChild(document.createTextNode(''));
     h1.appendChild(document.createTextNode(movies[slideIndex].name));
     p.appendChild(document.createTextNode(movies[slideIndex].des));
@@ -25,11 +25,11 @@ const createSlide = () => {
     slide.appendChild(imgElement);
     carousel.appendChild(slide);
 
-    //setting imags
+    
     imgElement.src = movies[slideIndex].image;
     slideIndex++;
 
-    //seting calssnames
+    
     slide.className = 'slider';
     content.className = 'slider-content';
     h1.className = 'movie-title';
@@ -37,7 +37,7 @@ const createSlide = () => {
 
     sliders.push(slide);
 
-    //sliding effect
+   
     if(sliders.length){
         sliders[0].style.marginLeft = `calc(-${100 * (sliders.length - 2)}% - ${30 * (sliders.length - 2)}px)`;
     }
@@ -52,7 +52,7 @@ setInterval(() => {
     createSlide();
 }, 3000);
 
-//video cards
+
 
 const videoCards = [...document.querySelectorAll('.video-card')];
 
@@ -68,7 +68,7 @@ videoCards.forEach(item => {
     })
 })
 
-//sliding effect
+
 let cardContainers = [...document.querySelectorAll('.card-container')];
 let preBtns = [...document.querySelectorAll('.pre-btn')];
 let nxtBtns = [...document.querySelectorAll('.nxt-btn')];
